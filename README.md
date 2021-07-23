@@ -2,7 +2,7 @@
 
 ## Author
 
-
+David Barnes
 
 ## Description
 
@@ -91,11 +91,11 @@ Be sure to think about what the time complexity for the bucket sort will be. Thi
 
 ## Outside Resources Used
 
-
+None
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+None
 
 ## Assignment 3 Description for reference
 
