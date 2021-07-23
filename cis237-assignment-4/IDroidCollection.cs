@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Author: David Barnes
+// Class: CIS 237
+// Assignment: 4
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,5 +17,9 @@ namespace cis237_assignment_4
 
         // Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
+
+        // Added a couple of methods that can be used to sort the droids.
+        void SortIntoCategories();
+        void SortByTotalCost();
     }
 }

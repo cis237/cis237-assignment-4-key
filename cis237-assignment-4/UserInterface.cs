@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Author: David Barnes
+// Class: CIS 237
+// Assignment: 4
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,7 +31,25 @@ namespace cis237_assignment_4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            Console.WriteLine("3. Exit the program");
+            Console.WriteLine("3. Sort the list of droids into categorical order");
+            Console.WriteLine("4. Sort the list of droids by Total Cost");
+            Console.WriteLine("5. Exit the program");
+        }
+
+        // Method to display a success message about the category sort
+        public void DisplaySortCategoriesSuccessMessage()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Droid list has been sorted into categories.");
+            Console.WriteLine();
+        }
+
+        // Method to display a success message about the Total Cost Sort
+        public void DisplaySortTotalCostSuccessMessage()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Droid list has been sorted by thier Total Cost.");
+            Console.WriteLine();
         }
 
         // Method to get a menu choice

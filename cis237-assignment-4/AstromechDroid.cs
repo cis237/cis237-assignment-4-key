@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Author: David Barnes
+// Class: CIS 237
+// Assignment: 4
+using System;
 using System.Collections.Generic;
 using System.Text;
 

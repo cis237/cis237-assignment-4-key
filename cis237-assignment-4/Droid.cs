@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Author: David Barnes
+// Class: CIS 237
+// Assignment: 4
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -68,6 +71,33 @@ namespace cis237_assignment_4
                     "Color: " + this.color + Environment.NewLine;
         }
 
+        // Have to implement the CompareTo function because Droid implements IDroid, and IDroid implements IComparable
+        public int CompareTo(Object obj)
+        {
+            // If the obj that is passed in is null, just return 1. Unable to compare
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            // Cast the obj to a droid.
+            Droid droid = (Droid)obj;
+
+            // Check to see if the droid is null. Perhaps the cast will fail and droid will be null.
+            if (droid != null)
+            {
+                // Do the comparison. Rather than doing the work of returning -1, 0, or 1
+                // I just delegated the work to the CompareTo method of decimal
+                return this.TotalCost.CompareTo(droid.TotalCost);
+            }
+            // Else, the droid is null, so the droid that was passed in must not have been a droid.
+            // Throw an exception stating so.
+            else
+            {
+                throw new ArgumentException("Object is not a Droid");
+            }
+        }
+
         // Method to get the cost of a certain material.
         private decimal getMaterialCost()
         {
@@ -99,7 +129,7 @@ namespace cis237_assignment_4
             return materialCost;
         }
 
-        // Method to get the cost of a certain color.
+        // Method to get the cost of a ceratin color.
         private decimal getColorCost()
         {
             decimal colorCost;
