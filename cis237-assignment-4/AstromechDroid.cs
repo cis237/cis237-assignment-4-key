@@ -13,18 +13,18 @@ namespace cis237_assignment_4
         protected decimal COST_PER_SHIP = 45.00m;
 
         // Class level variables unique to this class. Set as protected so children classes can access them.
-        protected bool hasFireExtinguisher;
+        protected bool hasNavigation;
         protected int numberOfShips;
 
         // Constructor that uses the Base Constuctor to do most of the work.
         public AstromechDroid(string Material, string Color,
-            bool HasToolbox, bool HasComputerConnection, bool HasArm, bool HasFireExtinquisher, int NumberOfShips) :
-            base(Material, Color, HasToolbox, HasComputerConnection, HasArm)
+            bool HasToolbox, bool HasComputerConnection, bool HasScanner, bool HasNavigation, int NumberOfShips) :
+            base(Material, Color, HasToolbox, HasComputerConnection, HasScanner)
         {
             // Set the Droid Cost
             MODEL_COST = 200.00m;
             // Assign the values for the constructor that are not handled by the base constructor
-            this.hasFireExtinguisher = HasFireExtinquisher;
+            this.hasNavigation = HasNavigation;
             this.numberOfShips = NumberOfShips;
         }
 
@@ -35,7 +35,7 @@ namespace cis237_assignment_4
 
             optionsCost += base.CalculateCostOfOptions();
 
-            if (hasFireExtinguisher)
+            if (hasNavigation)
             {
                 optionsCost += COST_PER_OPTION;
             }
@@ -68,7 +68,7 @@ namespace cis237_assignment_4
         {
             return
                 base.ToString() +
-                "Has Fire Extinguisher: " + this.hasFireExtinguisher + Environment.NewLine +
+                "Has Navigation: " + this.hasNavigation + Environment.NewLine +
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
         }
     }

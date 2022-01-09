@@ -10,18 +10,18 @@ namespace cis237_assignment_4
     class JanitorDroid : UtilityDroid
     {
         // Some protected variables that can be accessed in derived classes
-        protected bool hasTrashCompactor;
+        protected bool hasBroom;
         protected bool hasVacuum;
 
         // Constuctor that takes lots of parameters to create the droid. The base constructor is used to do some of the work
         public JanitorDroid(string Material, string Color,
-            bool HasToolbox, bool HasComputerConnection, bool HasArm, bool HasTrashCompactor, bool HasVacuum) :
-            base(Material, Color, HasToolbox, HasComputerConnection, HasArm)
+            bool HasToolbox, bool HasComputerConnection, bool HasScanner, bool HasBroom, bool HasVacuum) :
+            base(Material, Color, HasToolbox, HasComputerConnection, HasScanner)
         {
             // Set the Droid Cost
             MODEL_COST = 160.00m;
             // Assign the values that the base constructor is not taking care of.
-            this.hasTrashCompactor = HasTrashCompactor;
+            this.hasBroom = HasBroom;
             this.hasVacuum = HasVacuum;
         }
 
@@ -33,7 +33,7 @@ namespace cis237_assignment_4
 
             optionsCost += base.CalculateCostOfOptions();
 
-            if (hasTrashCompactor)
+            if (hasBroom)
             {
                 optionsCost += COST_PER_OPTION;
             }
@@ -56,7 +56,7 @@ namespace cis237_assignment_4
         {
             return
                 base.ToString() +
-                "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
+                "Has Broom: " + this.hasBroom + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
         }
     }

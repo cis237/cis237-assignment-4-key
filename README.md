@@ -134,10 +134,11 @@ Droid:
 * Variables: material (string), color (string), baseCost (decimal), totalCost (decimal)
 * Constructors: 2 parameter constructor (string, string)
 * Property: TotalCost to return the cost of the droid (Required by the interface)
-* Methods:
+* Public Methods:
 	* ToString: return a formatted string containing the variables
-	* CalculateBaseCost: Determines the baseCost based on material and type.
-	* CalculateTotalCost: assigns baseCost to totalCost (Required by the interface)
+	* CalculateTotalCost: Required by the interface
+* Protected Methods:
+	* Your Choice - But think about what might be able to be protected to save you work in derived classes.
 
 There should be two derived classes from the abstract class Droid with appropriate variables, methods and properties.
 
@@ -147,39 +148,39 @@ Protocol:
 * Constant: costPerLanguage
 * Constructors: 3 parameter constructor (string, string, int)
 	* Uses the base class (Droid) constructor
-* Methods:
+* Public Methods:
 	* ToString: return a formatted string containing the variables
-	* CalculateTotalCost: Calculate the totalCost based on the number of languages and adds it to the base totalCost
+	* CalculateTotalCost: Calculate the totalCost based on the number of languages and type, and then adds it to the base totalCost
 
 Utility:
 
-* Variables: toolbox (bool), computerConnection (bool), arm (bool)
+* Variables: toolbox (bool), computerConnection (bool), scanner (bool)
 * Constructors: 5 parameter constructor (string, string, bool, bool, bool)
 	* Uses the base class (Droid) constructor
-* Methods:
+* Public Methods:
 	* ToString: return a formatted string containing the variables
-	* CalculateTotalCost: Calculates totalCost by calculating the cost of each selected option and add it to the base totalCost.
+	* CalculateTotalCost: Calculates totalCost by calculating the cost of each selected option and type, and then add it to the base totalCost.
 
 There should be two more derived classes from the class Utility with appropriate variables, methods and properties.
 
 Janitor:
 
-* Variables: trashCompactor (bool), vacuum (bool)
+* Variables: broom (bool), vacuum (bool)
 * Constructors: 7 parameter constructor (string, string, bool, bool, bool, bool, bool)
 	* Uses the base class (Utility) constructor
-* Methods:
+* Public Methods:
 	* ToString: return a formatted string containing the variables
-	* CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and adds it to the base totalCost
+	* CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and type, and then adds it to the base CalculateTotalCost
 
 Astromech:
 
-* Variables: fireExtinquisher (bool), numberShips (int)
+* Variables: navigation (bool), numberShips (int)
 * Constant: costPerShip
 * Constructors: 7 parameter constructor (string, string, bool, bool, bool, bool, int)
 	* Uses the base class (Utility) constructor
-* Methods:
+* Public Methods:
 	* ToString: return a formatted string containing the variables
-	* CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and the cost based on the number of ships and adds both to the base CalculateTotalCost
+	* CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option, the cost based on the number of ships, and the type. Then add all of that to the base CalculateTotalCost
 
 ![Droid Class Diagram](http://barnesbrothers.homeserver.com/cis237/assignmentImages/DroidClassDiagram.jpg "Droid Class Diagram")
 

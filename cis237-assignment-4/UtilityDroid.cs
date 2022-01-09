@@ -15,11 +15,11 @@ namespace cis237_assignment_4
         // Class level variables that can be used in this class, or any children of this class
         protected bool hasToolbox;
         protected bool hasComputerConnection;
-        protected bool hasArm;
+        protected bool hasScanner;
 
         // Constructor that takes the standard parameters, and ones specific to this droid.
         // Calls the base constructor to do some of the work already written in the droid class.
-        public UtilityDroid(string Material, string Color, bool HasToolbox, bool HasComputerConnection, bool HasArm) :
+        public UtilityDroid(string Material, string Color, bool HasToolbox, bool HasComputerConnection, bool HasScanner) :
             base(Material, Color)
         {
             // Set the Droid Cost
@@ -27,7 +27,7 @@ namespace cis237_assignment_4
             // Assign the values that the base constructor is not taking care of.
             this.hasToolbox = HasToolbox;
             this.hasComputerConnection = HasComputerConnection;
-            this.hasArm = HasArm;
+            this.hasScanner = HasScanner;
         }
 
         // Virtual method to calculate the cost of the options. This method can be overridden in child classes
@@ -46,7 +46,7 @@ namespace cis237_assignment_4
                 optionsCost += COST_PER_OPTION;
             }
 
-            if (hasArm)
+            if (hasScanner)
             {
                 optionsCost += COST_PER_OPTION;
             }
@@ -77,7 +77,7 @@ namespace cis237_assignment_4
                 base.ToString() +
                 "Has Tool Box: " + this.hasToolbox + Environment.NewLine +
                 "Has Computer Connection: " + this.hasComputerConnection + Environment.NewLine +
-                "Has Arm: " + this.hasArm + Environment.NewLine;
+                "Has Scanner: " + this.hasScanner + Environment.NewLine;
         }
     }
 }
